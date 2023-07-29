@@ -1,0 +1,467 @@
+esp-utils/common/serialport.h:40:10: style:inconclusive: Technically the member function 'SerialPort::isReadError' can be const. [functionConst]
+    bool isReadError();
+         ^
+esp-utils/common/serialport.cpp:30:18: note: Technically the member function 'SerialPort::isReadError' can be const.
+bool SerialPort::isReadError() {
+                 ^
+esp-utils/common/serialport.h:40:10: note: Technically the member function 'SerialPort::isReadError' can be const.
+    bool isReadError();
+         ^
+esp-utils/common/serialport.h:45:17: style:inconclusive: Technically the member function 'SerialPort::getName' can be const. [functionConst]
+    const char *getName();
+                ^
+esp-utils/common/serialport.cpp:70:25: note: Technically the member function 'SerialPort::getName' can be const.
+const char *SerialPort::getName() {
+                        ^
+esp-utils/common/serialport.h:45:17: note: Technically the member function 'SerialPort::getName' can be const.
+    const char *getName();
+                ^
+esp-utils/common/serialport.h:56:9: style:inconclusive: Technically the member function 'SerialPort::get_com' can be const. [functionConst]
+    COM get_com();
+        ^
+esp-utils/common/serialport.cpp:26:17: note: Technically the member function 'SerialPort::get_com' can be const.
+COM SerialPort::get_com() {
+                ^
+esp-utils/common/serialport.h:56:9: note: Technically the member function 'SerialPort::get_com' can be const.
+    COM get_com();
+        ^
+esp-utils/common/serialport.cpp:59:11: style: Checking if unsigned expression 'bw' is less than zero. [unsignedLessThanZero]
+    if(bw <= 0)
+          ^
+esp-utils/common/serialport.cpp:16:5: performance: Variable 'mCom' is assigned in constructor body. Consider performing initialization in initialization list. [useInitializationList]
+    mCom = comport;
+    ^
+esp-utils/common/serialport.h:44:10: performance:inconclusive: Technically the member function 'SerialPort::sleep' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+    void sleep(unsigned int ms);
+         ^
+esp-utils/common/serialport_posix.cpp:117:18: note: Technically the member function 'SerialPort::sleep' can be static (but you may consider moving to unnamed namespace).
+void SerialPort::sleep(unsigned int ms) {
+                 ^
+esp-utils/common/serialport.h:44:10: note: Technically the member function 'SerialPort::sleep' can be static (but you may consider moving to unnamed namespace).
+    void sleep(unsigned int ms);
+         ^
+esp-utils/common/serialport_posix.cpp:27:25: style: C-style pointer casting [cstyleCast]
+    SerialPort *port =  (SerialPort *)arg;
+                        ^
+esp-utils/common/serialport_posix.cpp:71:20: style: Variable 'tio.c_cflag' is reassigned a value before the old one has been used. [redundantAssignment]
+       tio.c_cflag = CS8|CREAD|CLOCAL;
+                   ^
+esp-utils/common/serialport_posix.cpp:70:20: note: tio.c_cflag is assigned
+       tio.c_cflag &= ~(PARENB | CSTOPB | CSIZE | CRTSCTS);
+                   ^
+esp-utils/common/serialport_posix.cpp:71:20: note: tio.c_cflag is overwritten
+       tio.c_cflag = CS8|CREAD|CLOCAL;
+                   ^
+esp-utils/common/serialport_posix.cpp:130:17: style: The scope of the variable 'entry' can be reduced. [variableScope]
+ struct dirent *entry;
+                ^
+esp-utils/common/serialport.h:44:10: performance:inconclusive: Technically the member function 'SerialPort::sleep' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+    void sleep(unsigned int ms);
+         ^
+esp-utils/common/serialport_win.cpp:122:18: note: Technically the member function 'SerialPort::sleep' can be static (but you may consider moving to unnamed namespace).
+void SerialPort::sleep(unsigned int ms) {
+                 ^
+esp-utils/common/serialport.h:44:10: note: Technically the member function 'SerialPort::sleep' can be static (but you may consider moving to unnamed namespace).
+    void sleep(unsigned int ms);
+         ^
+esp-utils/common/serialport_win.cpp:129:2: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ snprintf(buf, sizeof(buf), "COM%d", num++);
+ ^
+esp-utils/common/serialport_win.cpp:18:25: style: C-style pointer casting [cstyleCast]
+    SerialPort *port =  (SerialPort *)lpdwThreadParam;
+                        ^
+esp-utils/common/terminal.h:25:7: performance:inconclusive: Technically the member function 'Terminal::get' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ void get(char *buf);
+      ^
+esp-utils/common/terminal_posix.cpp:59:16: note: Technically the member function 'Terminal::get' can be static (but you may consider moving to unnamed namespace).
+void Terminal::get(char *buf) {
+               ^
+esp-utils/common/terminal.h:25:7: note: Technically the member function 'Terminal::get' can be static (but you may consider moving to unnamed namespace).
+ void get(char *buf);
+      ^
+esp-utils/common/terminal.h:26:7: performance:inconclusive: Technically the member function 'Terminal::put' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ void put(char c);
+      ^
+esp-utils/common/terminal_posix.cpp:22:16: note: Technically the member function 'Terminal::put' can be static (but you may consider moving to unnamed namespace).
+void Terminal::put(char c) {
+               ^
+esp-utils/common/terminal.h:26:7: note: Technically the member function 'Terminal::put' can be static (but you may consider moving to unnamed namespace).
+ void put(char c);
+      ^
+esp-utils/common/terminal.h:25:7: performance:inconclusive: Technically the member function 'Terminal::get' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ void get(char *buf);
+      ^
+esp-utils/common/terminal_win.cpp:115:16: note: Technically the member function 'Terminal::get' can be static (but you may consider moving to unnamed namespace).
+void Terminal::get(char *buf) {
+               ^
+esp-utils/common/terminal.h:25:7: note: Technically the member function 'Terminal::get' can be static (but you may consider moving to unnamed namespace).
+ void get(char *buf);
+      ^
+esp-utils/common/terminal.h:26:7: performance:inconclusive: Technically the member function 'Terminal::put' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+ void put(char c);
+      ^
+esp-utils/common/terminal_win.cpp:64:16: note: Technically the member function 'Terminal::put' can be static (but you may consider moving to unnamed namespace).
+void Terminal::put(char c) {
+               ^
+esp-utils/common/terminal.h:26:7: note: Technically the member function 'Terminal::put' can be static (but you may consider moving to unnamed namespace).
+ void put(char c);
+      ^
+esp-utils/esp-flasher.cpp:93:3: error: The address of local variable 'res' is accessed at non-zero index. [objectIndex]
+ p[1] = n % 0x100;
+  ^
+esp-utils/esp-flasher.cpp:90:27: note: Address of variable taken here.
+ uint8_t *p = (uint8_t *) &res;
+                          ^
+esp-utils/esp-flasher.cpp:93:3: note: The address of local variable 'res' is accessed at non-zero index.
+ p[1] = n % 0x100;
+  ^
+esp-utils/esp-flasher.cpp:103:4: warning: The address of local variable 'res' might be accessed at non-zero index. [objectIndex]
+  p[i] = n % 0x100;
+   ^
+esp-utils/esp-flasher.cpp:101:27: note: Address of variable taken here.
+ uint8_t *p = (uint8_t *) &res;
+                          ^
+esp-utils/esp-flasher.cpp:103:4: note: The address of local variable 'res' might be accessed at non-zero index.
+  p[i] = n % 0x100;
+   ^
+esp-utils/esp-flasher.cpp:113:27: warning: The address of local variable 'reboot' might be accessed at non-zero index. [objectIndex]
+  res ^= ((uint8_t*) data)[i];
+                          ^
+esp-utils/esp-flasher.cpp:359:23: note: Address of variable taken here.
+ rh.cs = esp_checksum(&reboot, sizeof(reboot));
+                      ^
+esp-utils/esp-flasher.cpp:359:23: note: Calling function 'esp_checksum', 1st argument '&reboot' value is lifetime=reboot
+ rh.cs = esp_checksum(&reboot, sizeof(reboot));
+                      ^
+esp-utils/esp-flasher.cpp:113:27: note: The address of local variable 'reboot' might be accessed at non-zero index.
+  res ^= ((uint8_t*) data)[i];
+                          ^
+esp-utils/esp-flasher.cpp:129:12: warning: The address of local variable 'rh' might be accessed at non-zero index. [objectIndex]
+   c = hdrp[i];
+           ^
+esp-utils/esp-flasher.cpp:201:23: note: Address of variable taken here.
+ if(!flash_send(port, &rh, &pbody, true))
+                      ^
+esp-utils/esp-flasher.cpp:201:23: note: Calling function 'flash_send', 2nd argument '&rh' value is lifetime=rh
+ if(!flash_send(port, &rh, &pbody, true))
+                      ^
+esp-utils/esp-flasher.cpp:129:12: note: The address of local variable 'rh' might be accessed at non-zero index.
+   c = hdrp[i];
+           ^
+esp-utils/esp-flasher.cpp:129:12: warning: The address of local variable 'rh' might be accessed at non-zero index. [objectIndex]
+   c = hdrp[i];
+           ^
+esp-utils/esp-flasher.cpp:241:24: note: Address of variable taken here.
+  if(!flash_send(port, &rh, buffer, true)) {
+                       ^
+esp-utils/esp-flasher.cpp:241:24: note: Calling function 'flash_send', 2nd argument '&rh' value is lifetime=rh
+  if(!flash_send(port, &rh, buffer, true)) {
+                       ^
+esp-utils/esp-flasher.cpp:129:12: note: The address of local variable 'rh' might be accessed at non-zero index.
+   c = hdrp[i];
+           ^
+esp-utils/esp-flasher.cpp:129:12: warning: The address of local variable 'rh' might be accessed at non-zero index. [objectIndex]
+   c = hdrp[i];
+           ^
+esp-utils/esp-flasher.cpp:360:23: note: Address of variable taken here.
+ if(!flash_send(port, &rh, &reboot, true)) {
+                      ^
+esp-utils/esp-flasher.cpp:360:23: note: Calling function 'flash_send', 2nd argument '&rh' value is lifetime=rh
+ if(!flash_send(port, &rh, &reboot, true)) {
+                      ^
+esp-utils/esp-flasher.cpp:129:12: note: The address of local variable 'rh' might be accessed at non-zero index.
+   c = hdrp[i];
+           ^
+esp-utils/esp-flasher.cpp:129:12: warning: The address of local variable 'rh' might be accessed at non-zero index. [objectIndex]
+   c = hdrp[i];
+           ^
+esp-utils/esp-flasher.cpp:379:23: note: Address of variable taken here.
+  if(flash_send(port, &rh, (void*)body, false)) {
+                      ^
+esp-utils/esp-flasher.cpp:379:23: note: Calling function 'flash_send', 2nd argument '&rh' value is lifetime=rh
+  if(flash_send(port, &rh, (void*)body, false)) {
+                      ^
+esp-utils/esp-flasher.cpp:129:12: note: The address of local variable 'rh' might be accessed at non-zero index.
+   c = hdrp[i];
+           ^
+esp-utils/esp-flasher.cpp:210:3: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  printf("\r\nINTERNAL ERROR: data isn't align by 4096 bytes - %d\r\n", size);
+  ^
+esp-utils/esp-flasher.cpp:222:3: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  printf("\rWriting block %d/%d at 0x%08X        ", seq, blocks_count, address + ESP_BLOCK_SIZE * seq);
+  ^
+esp-utils/esp-flasher.cpp:222:3: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  printf("\rWriting block %d/%d at 0x%08X        ", seq, blocks_count, address + ESP_BLOCK_SIZE * seq);
+  ^
+esp-utils/esp-flasher.cpp:246:2: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("\rBlocks wrote %d/%d at 0x%08X\r\n", blocks_count, blocks_count, address);
+ ^
+esp-utils/esp-flasher.cpp:246:2: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("\rBlocks wrote %d/%d at 0x%08X\r\n", blocks_count, blocks_count, address);
+ ^
+esp-utils/esp-flasher.cpp:262:2: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("Align with extra %d bytes, total %d bytes\r\n", extra, extra + size);
+ ^
+esp-utils/esp-flasher.cpp:262:2: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ printf("Align with extra %d bytes, total %d bytes\r\n", extra, extra + size);
+ ^
+esp-utils/esp-flasher.cpp:340:5: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    printf("Incremental flash wrote %d/%d bytes in %d blocks.\r\n", total, size, blocks);
+    ^
+esp-utils/esp-flasher.cpp:340:5: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    printf("Incremental flash wrote %d/%d bytes in %d blocks.\r\n", total, size, blocks);
+    ^
+esp-utils/esp-flasher.cpp:340:5: warning: %d in format string (no. 3) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    printf("Incremental flash wrote %d/%d bytes in %d blocks.\r\n", total, size, blocks);
+    ^
+esp-utils/esp-flasher.cpp:298:5: error: Memory leak: data [memleak]
+    return true;
+    ^
+esp-utils/esp-flasher.cpp:354:11: style: Local variable 'reboot' shadows outer function [shadowFunction]
+ uint32_t reboot = htole32(1);
+          ^
+esp-utils/esp-flasher.cpp:420:6: note: Shadowed declaration
+void reboot(SerialPort *port) {
+     ^
+esp-utils/esp-flasher.cpp:354:11: note: Shadow variable
+ uint32_t reboot = htole32(1);
+          ^
+esp-utils/esp-terminal.cpp:77:12: error: Array 'ports[20]' accessed at index 20, which is out of bounds. [arrayIndexOutOfBounds]
+   if(ports[i]) {
+           ^
+firmware-src/sources/base64.c:58:53: style:inconclusive: Function 'esp_base64_encode' argument 1 names different: declaration 'data' definition 'data_'. [funcArgNamesDifferent]
+int ICACHE_FLASH_ATTR esp_base64_encode(const void *data_, size_t data_len,
+                                                    ^
+firmware-src/sources/base64.h:25:35: note: Function 'esp_base64_encode' argument 1 names different: declaration 'data' definition 'data_'.
+int esp_base64_encode(const void *data,
+                                  ^
+firmware-src/sources/base64.c:58:53: note: Function 'esp_base64_encode' argument 1 names different: declaration 'data' definition 'data_'.
+int ICACHE_FLASH_ATTR esp_base64_encode(const void *data_, size_t data_len,
+                                                    ^
+firmware-src/sources/base64.c:123:47: style:inconclusive: Function 'esp_base64_decode' argument 3 names different: declaration 'data' definition 'data_base'. [funcArgNamesDifferent]
+                                        void *data_base, size_t data_len)
+                                              ^
+firmware-src/sources/base64.h:52:29: note: Function 'esp_base64_decode' argument 3 names different: declaration 'data' definition 'data_base'.
+                      void *data,
+                            ^
+firmware-src/sources/base64.c:123:47: note: Function 'esp_base64_decode' argument 3 names different: declaration 'data' definition 'data_base'.
+                                        void *data_base, size_t data_len)
+                                              ^
+firmware-src/sources/devices/mfrc522.c:173:10: style: The scope of the variable 'n' can be reduced. [variableScope]
+ uint8_t n;
+         ^
+firmware-src/sources/devices/mfrc522.c:301:10: style: The scope of the variable 'n' can be reduced. [variableScope]
+ uint8_t n;
+         ^
+firmware-src/sources/devices/mfrc522.c:549:7: style: The scope of the variable 'selectDone' can be reduced. [variableScope]
+ bool selectDone;
+      ^
+firmware-src/sources/devices/mfrc522.c:554:10: style: The scope of the variable 'index' can be reduced. [variableScope]
+ uint8_t index;
+         ^
+firmware-src/sources/devices/mfrc522.c:556:9: style: The scope of the variable 'currentLevelKnownBits' can be reduced. [variableScope]
+ int8_t currentLevelKnownBits;  // The number of known UID bits in the current Cascade Level.
+        ^
+firmware-src/sources/devices/mfrc522.c:1458:10: style: The scope of the variable 'blockAddr' can be reduced. [variableScope]
+ uint8_t blockAddr;
+         ^
+firmware-src/sources/devices/mfrc522.c:1403:33: style: Unsigned expression 'i' can't be negative so it is unnecessary to test it. [unsignedPositive]
+  for (i = no_of_sectors - 1; i >= 0; i--) {
+                                ^
+firmware-src/sources/devices/mfrc522.c:1461:51: style: Unsigned expression 'blockOffset' can't be negative so it is unnecessary to test it. [unsignedPositive]
+ for (blockOffset = no_of_blocks - 1; blockOffset >= 0; blockOffset--) {
+                                                  ^
+firmware-src/sources/dhcommand_parser.c:92:6: style: The scope of the variable 'type' can be reduced. [variableScope]
+ int type;
+     ^
+firmware-src/sources/dhcommand_parser.c:282:11: style: The scope of the variable 'i' can be reduced. [variableScope]
+      int i;
+          ^
+firmware-src/sources/dhcommand_parser.c:291:11: style: The scope of the variable 'i' can be reduced. [variableScope]
+      int i;
+          ^
+firmware-src/sources/dhcommand_parser.c:330:10: style: The scope of the variable 'i' can be reduced. [variableScope]
+     int i;
+         ^
+firmware-src/sources/dhcommand_parser.c:340:17: style: The scope of the variable 'i' can be reduced. [variableScope]
+     int value, i;
+                ^
+firmware-src/sources/dhcommands.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+firmware-src/sources/dhcommands.c:215:17: style: Array index 'i' is used before limits check. [arrayIndexThenCheck]
+   while (params[i] == ' ' && i < paramslen)
+                ^
+firmware-src/sources/dhconnector.c:70:6: style: The scope of the variable 'type' can be reduced. [variableScope]
+ int type;
+     ^
+firmware-src/sources/dhconnector_websocket.c:121:64: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+ mPayLoadBufLen = dhconnector_websocket_api_start(mPayLoadBuf, PAYLOAD_BUF_SIZE);
+                                                               ^
+firmware-src/sources/dhconnector_websocket.c:180:84: style: Same value in both branches of ternary operator. [duplicateValueTernary]
+  mPayLoadBufLen = dhconnector_websocket_api_communicate(data, wslen, mPayLoadBuf, PAYLOAD_BUF_SIZE);
+                                                                                   ^
+firmware-src/sources/dhconnector_websocket_api.c:44:6: style: The scope of the variable 'type' can be reduced. [variableScope]
+ int type;
+     ^
+firmware-src/sources/dhsender_data.c:143:17: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   return len + snprintf(&buf[len], buf_len - len,
+                ^
+firmware-src/sources/dhsender_data.c:130:17: style: The scope of the variable 'i' can be reduced. [variableScope]
+   unsigned int i;
+                ^
+firmware-src/sources/dhsender_queue.c:99:10: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   pos = snprintf(out->json, sizeof(out->json),
+         ^
+firmware-src/sources/dhsettings.c:50:44: style:inconclusive: Function 'dhsettings_init' argument 1 names different: declaration 'saved' definition 'exist'. [funcArgNamesDifferent]
+int ICACHE_FLASH_ATTR dhsettings_init(int *exist) {
+                                           ^
+firmware-src/sources/dhsettings.h:35:26: note: Function 'dhsettings_init' argument 1 names different: declaration 'saved' definition 'exist'.
+int dhsettings_init(int *saved);
+                         ^
+firmware-src/sources/dhsettings.c:50:44: note: Function 'dhsettings_init' argument 1 names different: declaration 'saved' definition 'exist'.
+int ICACHE_FLASH_ATTR dhsettings_init(int *exist) {
+                                           ^
+firmware-src/sources/dhterminal.c:179:48: style:inconclusive: Function 'dh_uart_char_rcv_cb' argument 1 names different: declaration 'ch' definition 'c'. [funcArgNamesDifferent]
+void ICACHE_FLASH_ATTR dh_uart_char_rcv_cb(int c) {
+                                               ^
+firmware-src/sources/DH/uart.h:144:37: note: Function 'dh_uart_char_rcv_cb' argument 1 names different: declaration 'ch' definition 'c'.
+extern void dh_uart_char_rcv_cb(int ch);
+                                    ^
+firmware-src/sources/dhterminal.c:179:48: note: Function 'dh_uart_char_rcv_cb' argument 1 names different: declaration 'ch' definition 'c'.
+void ICACHE_FLASH_ATTR dh_uart_char_rcv_cb(int c) {
+                                               ^
+firmware-src/sources/dhterminal_commands.c:218:2: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ snprintf(digitBuff, sizeof(digitBuff), "%d", dhsender_queue_length());
+ ^
+firmware-src/sources/dhterminal_commands.c:79:7: style: The scope of the variable 'digitBuff' can be reduced. [variableScope]
+ char digitBuff[32];
+      ^
+firmware-src/sources/dhterminal_commands.c:225:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+firmware-src/sources/dhterminal_commands.c:345:7: style: The scope of the variable 'ipstr' can be reduced. [variableScope]
+ char ipstr[16];
+      ^
+firmware-src/sources/dhterminal_commands.c:389:7: style: The scope of the variable 'digitbuf' can be reduced. [variableScope]
+ char digitbuf[16];
+      ^
+firmware-src/sources/dhterminal_commands.c:418:7: style: The scope of the variable 'digitbuf' can be reduced. [variableScope]
+ char digitbuf[16];
+      ^
+firmware-src/sources/dhzc_pages.c:109:20: style: Variable 'esc_deviceid_len' is assigned a value that is never used. [unreadVariable]
+  esc_deviceid_len = rand_generate_deviceid(esc_deviceid);
+                   ^
+firmware-src/sources/dns.c:99:18: style:inconclusive: Function 'dns_cmp_fqdn_str' argument 2 names different: declaration 'prefix' definition 'str1'. [funcArgNamesDifferent]
+  const uint8_t *str1, const uint8_t *str2) {
+                 ^
+firmware-src/sources/dns.h:108:58: note: Function 'dns_cmp_fqdn_str' argument 2 names different: declaration 'prefix' definition 'str1'.
+int dns_cmp_fqdn_str(const uint8_t *fqdn, const uint8_t *prefix, const uint8_t *str);
+                                                         ^
+firmware-src/sources/dns.c:99:18: note: Function 'dns_cmp_fqdn_str' argument 2 names different: declaration 'prefix' definition 'str1'.
+  const uint8_t *str1, const uint8_t *str2) {
+                 ^
+firmware-src/sources/dns.c:99:39: style:inconclusive: Function 'dns_cmp_fqdn_str' argument 3 names different: declaration 'str' definition 'str2'. [funcArgNamesDifferent]
+  const uint8_t *str1, const uint8_t *str2) {
+                                      ^
+firmware-src/sources/dns.h:108:81: note: Function 'dns_cmp_fqdn_str' argument 3 names different: declaration 'str' definition 'str2'.
+int dns_cmp_fqdn_str(const uint8_t *fqdn, const uint8_t *prefix, const uint8_t *str);
+                                                                                ^
+firmware-src/sources/dns.c:99:39: note: Function 'dns_cmp_fqdn_str' argument 3 names different: declaration 'str' definition 'str2'.
+  const uint8_t *str1, const uint8_t *str2) {
+                                      ^
+firmware-src/sources/httpd.c:226:20: style: Array index 'i' is used before limits check. [arrayIndexThenCheck]
+  } else while(data[i] != '\n' && i < len) i++;
+                   ^
+firmware-src/sources/irom.c:11:29: style:inconclusive: Function 'irom_byte' argument 1 names different: declaration 'rom_ptr' definition 'ptr'. [funcArgNamesDifferent]
+uint8 irom_byte(const void *ptr)
+                            ^
+firmware-src/sources/irom.h:64:31: note: Function 'irom_byte' argument 1 names different: declaration 'rom_ptr' definition 'ptr'.
+uint8_t irom_byte(const void *rom_ptr);
+                              ^
+firmware-src/sources/irom.c:11:29: note: Function 'irom_byte' argument 1 names different: declaration 'rom_ptr' definition 'ptr'.
+uint8 irom_byte(const void *ptr)
+                            ^
+firmware-src/sources/mdnsd.c:36:39: error: Signed integer overflow for expression '251<<24'. [integerOverflow]
+LOCAL struct ip_addr mMulticastIP = { MDNS_IP };
+                                      ^
+firmware-src/sources/mdnsd.c:41:35: error: Signed integer overflow for expression '251<<24'. [integerOverflow]
+ const struct ip_addr mdns_ip = { MDNS_IP };
+                                  ^
+firmware-src/sources/devices/mfrc522.c:973:0: style: The function 'MFRC522_MIFARE_Decrement' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1070:0: style: The function 'MFRC522_MIFARE_GetValue' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:987:0: style: The function 'MFRC522_MIFARE_Increment' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1001:0: style: The function 'MFRC522_MIFARE_Restore' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1608:0: style: The function 'MFRC522_MIFARE_SetAccessBits' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1695:0: style: The function 'MFRC522_MIFARE_SetUid' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1095:0: style: The function 'MFRC522_MIFARE_SetValue' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1044:0: style: The function 'MFRC522_MIFARE_Transfer' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:940:0: style: The function 'MFRC522_MIFARE_Ultralight_Write' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1794:0: style: The function 'MFRC522_MIFARE_UnbrickUidSector' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1284:0: style: The function 'MFRC522_PCD_DumpVersionToSerial' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1125:0: style: The function 'MFRC522_PCD_NTAG216_AUTH' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:280:0: style: The function 'MFRC522_PCD_PerformSelfTest' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:267:0: style: The function 'MFRC522_PCD_SetAntennaGain' is never used. [unusedFunction]
+
+^
+firmware-src/sources/devices/mfrc522.c:1306:0: style: The function 'MFRC522_PICC_DumpToSerial' is never used. [unusedFunction]
+
+^
+firmware-src/sources/custom_firmware.c:14:0: style: The function 'custom_firmware_request' is never used. [unusedFunction]
+
+^
+firmware-src/sources/DH/uart.c:303:0: style: The function 'dh_uart_reset_buf' is never used. [unusedFunction]
+
+^
+firmware-src/sources/dhdebug.c:29:0: style: The function 'dhdebug_dump' is never used. [unusedFunction]
+
+^
+firmware-src/sources/dhterminal.c:358:0: style: The function 'dhterminal_is_in_use' is never used. [unusedFunction]
+
+^
+firmware-src/sources/rand.c:27:0: style: The function 'rand_generate_key' is never used. [unusedFunction]
+
+^
+esp-utils/esp-flasher.cpp:388:0: style: The function 'startWith' is never used. [unusedFunction]
+
+^
+firmware-src/sources/dhutils.c:67:0: style: The function 'strToInt' is never used. [unusedFunction]
+
+^
+firmware-src/sources/main.c:139:0: style: The function 'user_init' is never used. [unusedFunction]
+
+^
+firmware-src/sources/main.c:44:0: style: The function 'user_rf_cal_sector_set' is never used. [unusedFunction]
+
+^
+firmware-src/sources/main.c:104:0: style: The function 'user_rf_pre_init' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
